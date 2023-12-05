@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="form.patch(`/listing/${props.listing.id}`)">
+  <form @submit.prevent="form.patch(route('listing.update', props.listing.id))">
     <div>
       <div>
         <label>Beds</label>

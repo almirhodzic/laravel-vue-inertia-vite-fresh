@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="form.post('/listing')">
+  <form @submit.prevent="form.post(route('listing.store'))">
     <div>
       <div>
         <label>Beds</label>
@@ -71,10 +71,6 @@ const form = useForm({
     street_nr: null,
     price: 100,
 })
-
-/* function submit() {
-    router.post('/listing', form)
-} */
 </script>
 
 <style scoped>
