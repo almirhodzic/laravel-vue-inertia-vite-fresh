@@ -1,5 +1,14 @@
 <template>
+  <div>Index</div>
+  <Link href="/hello">Show Page</Link>
   <div>
-    <h1>Index</h1>
+    The message is: {{ message }}
   </div>
 </template>
+
+<script setup>
+import { Link } from '@inertiajs/vue3'
+defineProps({
+    message: String,
+})
+</script>

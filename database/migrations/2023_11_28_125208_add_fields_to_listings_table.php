@@ -50,7 +50,7 @@ return new class extends Migration
             'city',
             'code',
             'street',
-            'street_number',
+            'street_nr',
             'price',
         ]);
     }

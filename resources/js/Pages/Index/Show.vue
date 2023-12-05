@@ -1,5 +1,8 @@
 <template>
-  <div>
-    <h1>Show</h1>
-  </div>
+  <div>Show</div>
+  <Link href="/">Main Page</Link>
 </template>
+
+<script setup>
+import { Link } from '@inertiajs/vue3'
+</script>
