@@ -18,6 +18,7 @@
         "vue": "^3.3.9"
     },
     "dependencies": {
+        "@inertiajs/progress": "^0.2.7",
         "@inertiajs/vue3": "^1.0.14",
         "eslint": "^8.54.0",
         "eslint-plugin-vue": "^9.18.1"

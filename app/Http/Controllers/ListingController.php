@@ -90,7 +90,7 @@ class ListingController extends Controller
                 'baths' => 'required|integer|min:1|max:20',
                 'area' => 'required|integer|min:1|max:1500',
                 'city' => 'required|string',
-                'code' => 'required|string',
+                'code' => 'required|integer',
                 'street' => 'required|string',
                 'street_nr' => 'required|string',
                 'price' => 'required|integer|min:1',

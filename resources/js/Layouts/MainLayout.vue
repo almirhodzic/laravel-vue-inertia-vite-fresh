@@ -1,16 +1,26 @@
 <template>
-  <Link href="/">Main Page</Link>&nbsp;
-  <Link href="/hello">Show Page</Link>&nbsp;
-  <Link href="/listing">Listing</Link>&nbsp;
-  <Link href="/listing/create">Create Listing</Link>
-  <div>&nbsp;</div>
-  <!-- <div>The page is running about {{ timer }} seconds.</div> -->
-  <div v-if="flashSuccess" class="success">
-    {{ flashSuccess }}
-  </div>
-  <div>&nbsp;</div>
+  <header class="header-element">
+    <div class="container mx-auto">
+      <nav class="p-4 flex items-center justify-between">
+        <div class="text-lg font-medium">
+          <Link :href="route('listing.index')">Listings</Link>
+        </div>
+        <div class="page-title">
+          <Link :href="route('listing.index')">LaraZillow</Link>
+        </div>
+        <div>
+          <Link :href="route('listing.create')" class="form-button-create py-2.5">+ New Listing</Link>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-  <slot>hello</slot>
+  <main class="container mx-auto p-4">
+    <div v-if="flashSuccess" class="form-bag-success">
+      {{ flashSuccess }}
+    </div>
+    <slot>Default</slot>
+  </main>
 </template>
 
 <script setup>
@@ -19,10 +29,3 @@ import { Link, usePage } from '@inertiajs/vue3'
 const page = usePage()
 const flashSuccess = computed(() => page.props.flash.success)
 </script>
-
-<style scoped>
-.success {
-  background-color: green;
-  color: white;
-}
-</style>

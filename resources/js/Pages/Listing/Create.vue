@@ -1,58 +1,56 @@
 <template>
   <form @submit.prevent="form.post(route('listing.store'))">
-    <div>
-      <div>
-        <label>Beds</label>
-        <input id="beds" v-model.number="form.beds" type="number" />
-        <div v-if="form.errors.beds" class="error">{{ form.errors.beds }}</div>
+    <div class="grid grid-cols-6 gap-4">
+      <div class="col-span-2">
+        <label class="form-label">Beds</label>
+        <input id="beds" v-model.number="form.beds" type="number" class="form-input-text" />
+        <div v-if="form.errors.beds" class="form-bag-error">{{ form.errors.beds }}</div>
       </div>
 
-      <div>
-        <label>Baths</label>
-        <input id="baths" v-model.number="form.baths" type="number" />
-        <div v-if="form.errors.baths" class="error">{{ form.errors.baths }}</div>
+      <div class="col-span-2">
+        <label class="form-label">Baths</label>
+        <input id="baths" v-model.number="form.baths" type="number" class="form-input-text" />
+        <div v-if="form.errors.baths" class="form-bag-error">{{ form.errors.baths }}</div>
       </div>
 
-      <div>
-        <label>Area</label>
-        <input id="area" v-model="form.area" type="number" />
-        <div v-if="form.errors.area" class="error">{{ form.errors.area }}</div>
+      <div class="col-span-2">
+        <label class="form-label">Area</label>
+        <input id="area" v-model="form.area" type="number" class="form-input-text" />
+        <div v-if="form.errors.area" class="form-bag-error">{{ form.errors.area }}</div>
       </div>
 
-      <div>
-        <label>City</label>
-        <input v-model="form.city" type="text" />
-        <div v-if="form.errors.city" class="error">{{ form.errors.city }}</div>
+      <div class="col-span-4">
+        <label class="form-label">City</label>
+        <input v-model="form.city" type="text" class="form-input-text" />
+        <div v-if="form.errors.city" class="form-bag-error">{{ form.errors.city }}</div>
       </div>
 
-      <div>
-        <label>Post Code</label>
-        <input id="code" v-model.number="form.code" type="text" />
-        <div v-if="form.errors.code" class="error">{{ form.errors.code }}</div>
+      <div class="col-span-2">
+        <label class="form-label">Post Code</label>
+        <input id="code" v-model.number="form.code" type="text" class="form-input-text" />
+        <div v-if="form.errors.code" class="form-bag-error">{{ form.errors.code }}</div>
       </div>
 
-      <div>
-        <label>Street</label>
-        <input id="street" v-model="form.street" type="text" />
-        <div v-if="form.errors.street" class="error">{{ form.errors.street }}</div>
+      <div class="col-span-4">
+        <label class="form-label">Street</label>
+        <input id="street" v-model="form.street" type="text" class="form-input-text" />
+        <div v-if="form.errors.street" class="form-bag-error">{{ form.errors.street }}</div>
       </div>
 
-      <div>
-        <label>Street Nr</label>
-        <input id="street_nr" v-model="form.street_nr" type="text" />
-        <div v-if="form.errors.street_nr" class="error">{{ form.errors.street_nr }}</div>
+      <div class="col-span-2">
+        <label class="form-label">Street Nr</label>
+        <input id="street_nr" v-model="form.street_nr" type="text" class="form-input-text" />
+        <div v-if="form.errors.street_nr" class="form-bag-error">{{ form.errors.street_nr }}</div>
       </div>
 
-      <div>
-        <label>Price</label>
-        <input id="price" v-model.number="form.price" type="number" />
-        <div v-if="form.errors.price" class="error">{{ form.errors.price }}</div>
+      <div class="col-span-6">
+        <label class="form-label">Price</label>
+        <input id="price" v-model.number="form.price" type="number" class="form-input-text" />
+        <div v-if="form.errors.price" class="form-bag-error">{{ form.errors.price }}</div>
       </div>
 
-      <div>&nbsp;</div>
-
-      <div>
-        <button type="submit" :disabled="form.processing">Create</button>
+      <div class="col-span-6 mt-4">
+        <button type="submit" :disabled="form.processing" class="form-button-create">Save Listing</button>
       </div>
     </div>
   </form>
@@ -74,17 +72,5 @@ const form = useForm({
 </script>
 
 <style scoped>
-label {
-  margin-right: 2em;
-  width: 75px;
-  display: inline-block;
-}
 
-div {
-  padding: 2px
-}
-.error {
-  background-color: red;
-  color: white;
-}
 </style>
